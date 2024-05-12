@@ -1,0 +1,28 @@
+{% extends 'student/base.html' %}
+
+{% load static %}
+{% block content %}
+<form method='POST' class="post-form">
+{% csrf_token %}
+<div class="container">
+<div style="overflow:scroll; border:#000000 1px solid;">
+    <table>
+        <tr>
+            <th> la liste des Users </th>
+            <th> la liste des Postes </th>
+        </tr>
+        <tr> 
+            <th>
+                {% for u in listP %}
+                <tr> 
+                    <td>
+                        <p>{{u.title}} {{u.author}} </p>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tr>
+        </th>
+       
+    </tr>
+    </table>
+{% endblock %}

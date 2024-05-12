@@ -1,0 +1,45 @@
+{% extends 'magasin/base.html' %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenue dans notre magasin</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+
+{% block content %}
+
+<!-- <div class="container">
+  <div class="header">
+    <center>    <h2>Bienvenue dans notre Magasin</h2>   </center>
+  </div>
+  <div class="nav-container">
+    <nav>
+      <ul id="menu">
+         <li><a href="http://127.0.0.1:8000/magasin/">Magasin</a></li>
+        <li><a href="http://127.0.0.1:8000/magasin/majProduits/">Ajouter Produit</a></li>
+        <li><a href="http://127.0.0.1:8000/magasin/nouvFournisseur/">Ajouter Fournisseur</a></li> 
+      </ul>
+    </nav>
+  </div>
+
+</div> -->
+<div class="container mt-5">
+  <div class="jumbotron">
+    <h1 class="display-4">Bienvenue sur notre Magasin MagProd</h1>
+    <p class="lead"> notre site web E_commerce offre  une variété chox de produit de qualité.</p>
+    <hr class="my-4">
+    <p>Explorez nos offres dès maintenant.</p>
+    <a class="btn btn-primary btn-lg" href="http://127.0.0.1:8000/magasin" role="button">En savoir plus</a>
+  </div>
+</div>
+<footer class="bg-white text-bleu py-4">
+    <div class="container text-center">
+        <p>&copy; 2024 E-commerce@MagProd. Tous droits réservés.</p>
+    </div>
+</footer>
+
+{% endblock %}

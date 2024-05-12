@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %} 
+Supprimer le post : {{ post.title }}
+{% endblock title %}
+{% block styles %}
+{% endblock styles %}
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+<h5> Are you sure to delete this post  : {{ post.title }} ?</h5>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary "> Supprimer</button>
+    </form>
+    <a href="{% url 'listPosts' %}">Annuler</a>
+</div>
+</div>
+</div>
+    
+{% endblock %}

@@ -1,0 +1,25 @@
+
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %} 
+Modifier le post : {{ post.title }}
+{% endblock title %}
+{% block styles %}
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'magasin/form.css'%}">
+{% endblock styles %}
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+<h3>Modifier le post : {{ post.title }}</h3>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}
+

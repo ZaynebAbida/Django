@@ -1,0 +1,28 @@
+{% extends 'magasin/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    {% for article in list %}
+    <div class="col-md-4">
+        <div class="card mb-3" style="width: 300px; height: 300px;">
+            <center>
+            <img src='/media/{{ article.img }}' class="card-img-top" alt="..." style="width: 150px; height: 150px;">
+        </center>
+            <div class="card-body">
+                <h5 class="card-title">{{article.libelle}}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{article.prix}} DT</li>
+                <li class="list-group-item">{{article.description}} </li>    
+            
+            </ul>
+            
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+</div>
+<div class="row">
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

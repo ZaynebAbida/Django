@@ -1,0 +1,38 @@
+{% extends 'magasin/base.html' %}
+
+{% block content %} 
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="text-center">Liste des fournisseurs</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Adresse</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for fournisseur in object_list %}
+          <tr>
+            <td>{{ fournisseur.nom }}</td>
+            <td>{{ fournisseur.adresse }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="2">Aucun fournisseur disponible.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h2 class="text-center">Ajouter un fournisseur</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
