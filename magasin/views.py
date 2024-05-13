@@ -68,7 +68,7 @@ def nouveauFournisseur(request):
         form = FournisseurForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('/magasin')
+            return redirect('/magasin/nouvFournisseur')
     else:
         form = FournisseurForm()
     return render(request, 'magasin/fournisseur.html', {'form': form , 'object_list': object_list})
